@@ -176,7 +176,7 @@ Accédez à la liste des produits au format JSON via :
 ![Texte alternatif](src/main/resources/images/liste-products.png)
 
 #### **2. Liste des produits au format JSON**
-
+Si on accéde à la page http://localhost:8081/products on doit voir comme ceci 
 ```json
 [
     {
@@ -199,7 +199,7 @@ Accédez à la liste des produits au format JSON via :
     }
 ]
 ```
-cette dernière il est affiché grace à la connexion en MySql
+
 ---
 
 ### **7. Conclusion**
