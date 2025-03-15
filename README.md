@@ -8,7 +8,7 @@ java 17 qui utiliser dans ce projet
 il faut aussi faire les dépendances suivantes : les dépendances JPA, H2, Spring Web et Lombock
 
 on peut accéder à la console de h2 via http://localhost:8081/h2-console
-![Texte alternatif](imageinterface_web_h2.png)
+![Texte alternatif](src/main/resources/images/interface_web_h2.png)
 
 on écrit le jdbc:h2:mem:products-db dans jdbc-url de h2 console on va voir la classe product qu'on a fait 
 
