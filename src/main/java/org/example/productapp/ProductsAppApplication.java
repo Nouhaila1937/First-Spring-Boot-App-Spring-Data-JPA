@@ -23,10 +23,17 @@ public class ProductsAppApplication implements CommandLineRunner {
 	productRepository.save(new Product("Computer",43000.0,2));
 	productRepository.save(new Product("Printer",4300.0,20));
 	productRepository.save(new Product("Phone",7300.0,10));
+	productRepository.save(new Product("Tablet",7300.0,10));
 	List<Product> products = productRepository.findAll();
 	products.forEach(p->{
 		System.out.println(p.toString());
 	});
+	System.out.println("$$$$$$$$$$$$$$$$$$");
+	List<Product> product=productRepository.findByIdContains(2L);
+		product.forEach(p->{
+			System.out.println(p.toString());
+		});
+
 
 	}
 
