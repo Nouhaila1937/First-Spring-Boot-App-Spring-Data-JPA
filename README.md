@@ -58,7 +58,17 @@ Exemple de configuration des dépendances dans `pom.xml` :
 
 ### **3. Configuration de application.properties**
 
-Avant de passer à l'affichage des produits, nous avons configuré la base de données pour utiliser **MySQL** au lieu de **H2**.
+Nous avons configuré la base de données pour utiliser au lieu de **H2**.
+
+```properties
+spring.application.name=product-app
+server.port=8081
+#spring.datasource.url=jdbc:h2:mem:products-db
+#spring.h2.console.enabled=true
+#spring.jpa.show-sql=true
+```
+
+Nous avons configuré la base de données pour utiliser **MySQL**.
 
 ```properties
 spring.application.name=product-app
@@ -70,10 +80,6 @@ spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
 
-# Ancienne configuration H2 (désactivée)
-#spring.datasource.url=jdbc:h2:mem:products-db
-#spring.h2.console.enabled=true
-#spring.jpa.show-sql=true
 ```
 
 ---
