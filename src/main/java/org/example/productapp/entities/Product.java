@@ -17,4 +17,10 @@ public class Product {
    private String name;
    private Double price;
    private int quantity;
+    // Constructeur sans l'ID
+    public Product(String name, Double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }

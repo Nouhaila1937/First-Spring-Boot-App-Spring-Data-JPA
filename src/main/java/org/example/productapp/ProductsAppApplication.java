@@ -14,11 +14,13 @@ public class ProductsAppApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 
 		SpringApplication.run(ProductsAppApplication.class, args);
+
 	}
 	@Override
 	public void run(String... args) throws Exception {
-	productRepository.save(new Product(null,"Computer",43000.0,2));
-	productRepository.save(new Product(null,"Printer",4300.0,20));
-	productRepository.save(new Product(null,"Phone",7300.0,10));
+	productRepository.save(new Product("Computer",43000.0,2));
+	productRepository.save(new Product("Printer",4300.0,20));
+	productRepository.save(new Product("Phone",7300.0,10));
 	}
+
 }
