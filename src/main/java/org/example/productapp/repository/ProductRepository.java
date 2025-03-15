@@ -10,5 +10,5 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     //spring data pour ajouter des éléments dans le tableau products
 
-    List<Product> findByIdContains(Long id);
+    List<Product> findByNameContains(String name);
 }
