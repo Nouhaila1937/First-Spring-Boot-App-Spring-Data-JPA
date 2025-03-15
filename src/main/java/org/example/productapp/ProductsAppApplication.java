@@ -30,11 +30,12 @@ public class ProductsAppApplication implements CommandLineRunner {
 		System.out.println(p.toString());
 	});
 	System.out.println("$$$$$$$$$$$$$$$$$$");
-	List<Product> product=productRepository.findByNameContains("Computer");
+	/*List<Product> product=productRepository.findByNameContains("Computer");
 		product.forEach(p->{
 			System.out.println(p.toString());
 		});
-
+*/
+		List<Product> products2 = productRepository.search("%C%");
 
 	}
 
