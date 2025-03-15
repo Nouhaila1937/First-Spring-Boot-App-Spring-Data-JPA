@@ -178,7 +178,7 @@ public class ProductController {
 ## **Exemples de sortie**
 
 ### **1. Table `Product` dans la console H2**
-![Table Product](src/main/resources/images/liste-products.png.png)
+![Table Product](src/main/resources/images/liste-products.png)
 
 ---
 
