@@ -56,42 +56,31 @@ Exemple de configuration des dépendances dans `pom.xml` :
 
 ---
 
-### **3. Configuration de `application.properties`**
-Configurez le fichier `application.properties` pour utiliser la base de données H2 et activer la console H2.
+### **3. Configuration de application.properties**
+
+Avant de passer à l'affichage des produits, nous avons configuré la base de données pour utiliser **MySQL** au lieu de **H2**.
 
 ```properties
-# Configuration de l'application
 spring.application.name=product-app
 server.port=8081
 
-# Configuration de la base de données H2
-spring.datasource.url=jdbc:h2:mem:products-db
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
+spring.datasource.url=jdbc:mysql://localhost:3306/products-db?createDatabaseIfNotExist=true
+spring.datasource.username=root
 spring.datasource.password=
-spring.h2.console.enabled=true
-spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+
+# Ancienne configuration H2 (désactivée)
+#spring.datasource.url=jdbc:h2:mem:products-db
+#spring.h2.console.enabled=true
+#spring.jpa.show-sql=true
 ```
 
 ---
 
-### **4. Accéder à la console H2**
-Démarrez l'application Spring Boot.
+### **4. Structure du projet**
 
-Accédez à la console H2 via : [http://localhost:8081/h2-console](http://localhost:8081/h2-console).
-
-Entrez les informations suivantes :
-
-- **JDBC URL** : `jdbc:h2:mem:products-db`
-- **Username** : `sa`
-- **Password** : *(laissez vide)*
-
----
-
-## **Structure du projet**
-
-### **1. Entité `Product`**
+#### **1. Entité Product**
 Créez une entité `Product` pour représenter un produit dans la base de données.
 
 ```java
@@ -119,9 +108,7 @@ public class Product {
 }
 ```
 
----
-
-### **2. Repository `ProductRepository`**
+#### **2. Repository ProductRepository**
 Créez un repository pour gérer les opérations CRUD sur l'entité `Product`.
 
 ```java
@@ -136,9 +123,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 }
 ```
 
----
-
-### **3. Endpoint REST**
+#### **3. Endpoint REST**
 Créez un contrôleur pour exposer les produits via un endpoint REST.
 
 ```java
@@ -169,20 +154,23 @@ public class ProductController {
 
 ---
 
-## **Utilisation de l'application**
-1. Démarrez l'application Spring Boot.
-2. Accédez à la liste des produits au format JSON via : [http://localhost:8081/products](http://localhost:8081/products).
+### **5. Utilisation de l'application**
+
+Démarrez l'application Spring Boot.
+
+Accédez à la liste des produits au format JSON via :
+
+**➡️ http://localhost:8081/products**
 
 ---
 
-## **Exemples de sortie**
+### **6. Exemples de sortie**
 
-### **1. Table `Product` dans la console H2**
-![Table Product](src/main/resources/images/liste-products.png)
+#### **1. Table Product dans la console H2**
+![Texte alternatif](src/main/resources/images/liste-products.png)
 
----
+#### **2. Liste des produits au format JSON**
 
-### **2. Liste des produits au format JSON**
 ```json
 [
     {
@@ -205,10 +193,9 @@ public class ProductController {
     }
 ]
 ```
-
+cette dernière il est affiché grace à la connexion en MySql
 ---
 
-## **Conclusion**
+### **7. Conclusion**
 Ce projet est un exemple simple d'une application Spring Boot utilisant Spring Data JPA et Hibernate pour gérer une base de données de produits. Vous pouvez étendre ce projet en ajoutant plus de fonctionnalités, comme la gestion des commandes, des utilisateurs, etc.
-
 
