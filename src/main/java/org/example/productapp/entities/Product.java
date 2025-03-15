@@ -9,8 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data //c'est du lombook il va ajouter des setters et des getters auto sans les faires
-@NoArgsConstructor @AllArgsConstructor
+@Data @NoArgsConstructor @AllArgsConstructor
+//c'est du lombook il va ajouter des setters et des getters auto sans les faires
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //c'est autoincrement
    private Long id;
